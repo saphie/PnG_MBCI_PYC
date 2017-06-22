@@ -1,1 +1,120 @@
-/* Empty. Add your own CSS if you like */
+@charset "utf-8";
+
+[ng-cloak] { display:none; }
+
+
+.mg5 { margin:5px !important; }
+.mg10 { margin:10px !important; }
+.mg15 { margin:15px !important; }
+.mg20 { margin:20px !important; }
+.mg25 { margin:25px !important; }
+.mg30 { margin:30px !important; }
+.mg40 { margin:40px !important; }
+.mg50 { margin:50px !important; }
+
+.mgt3 { margin-top:3px !important; }
+.mgt5 { margin-top:5px !important; }
+.mgt10 { margin-top:10px !important; }
+.mgt15 { margin-top:15px !important; }
+.mgt20 { margin-top:20px !important; }
+.mgt25 { margin-top:25px !important; }
+.mgt30 { margin-top:30px !important; }
+.mgt40 { margin-top:40px !important; }
+.mgt50 { margin-top:50px !important; }
+
+.mgl3 { margin-left:3px !important; }
+.mgl5 { margin-left:5px !important; }
+.mgl10 { margin-left:10px !important; }
+.mgl15 { margin-left:15px !important; }
+.mgl20 { margin-left:20px !important; }
+.mgl25 { margin-left:25px !important; }
+.mgl30 { margin-left:30px !important; }
+.mgl40 { margin-left:40px !important; }
+.mgl50 { margin-left:50px !important; }
+
+.mgr3 { margin-right:3px !important; }
+.mgr5 { margin-right:5px !important; }
+.mgr10 { margin-right:10px !important; }
+.mgr15 { margin-right:15px !important; }
+.mgr20 { margin-right:20px !important; }
+.mgr25 { margin-right:25px !important; }
+.mgr30 { margin-right:30px !important; }
+.mgr40 { margin-right:40px !important; }
+.mgr50 { margin-right:50px !important; }
+
+.mgb3 { margin-bottom:3px !important; }
+.mgb5 { margin-bottom:5px !important; }
+.mgb10 { margin-bottom:10px !important; }
+.mgb15 { margin-bottom:15px !important; }
+.mgb20 { margin-bottom:20px !important; }
+.mgb25 { margin-bottom:25px !important; }
+.mgb30 { margin-bottom:30px !important; }
+.mgb40 { margin-bottom:40px !important; }
+.mgb50 { margin-bottom:50px !important; }
+
+.pd5 { padding:5px !important; }
+.pd10 { padding:10px !important; }
+.pd15 { padding:15px !important; }
+.pd20 { padding:20px !important; }
+.pd25 { padding:25px !important; }
+.pd30 { padding:30px !important; }
+
+.pdt5 { padding-top:5px !important; }
+.pdt10 { padding-top:10px !important; }
+.pdt15 { padding-top:15px !important; }
+.pdt20 { padding-top:20px !important; }
+
+.pdl5 { padding-left:5px !important; }
+.pdl10 { padding-left:10px !important; }
+.pdl15 { padding-left:15px !important; }
+.pdl20 { padding-left:20px !important; }
+
+.pdr5 { padding-right:5px !important; }
+.pdr10 { padding-right:10px !important; }
+.pdr15 { padding-right:15px !important; }
+.pdr20 { padding-right:20px !important; }
+
+.pdb5 { padding-bottom:5px !important; }
+.pdb10 { padding-bottom:10px !important; }
+.pdb15 { padding-bottom:15px !important; }
+.pdb20 { padding-bottom:20px !important; }
+
+
+.w20p { width:20% !important; }
+.w30p { width:30% !important; }
+.w40p { width:40% !important; }
+.w50p { width:50% !important; }
+.w80p { width:80% !important; }
+.w100p { width:100% !important; }
+
+.h50 { height:50px !important; }
+.h60 { height:60px !important; }
+.h70 { height:70px !important; }
+.h80 { height:80px !important; }
+.h90 { height:90px !important; }
+.h100 { height:100px !important; }
+.h150 { height:150px !important; }
+.h200 { height:200px !important; }
+.h250 { height:250px !important; }
+.h300 { height:300px !important; }
+.h350 { height:350px !important; }
+.h400 { height:400px !important; }
+.h450 { height:450px !important; }
+
+
+.clear { clear:both; }
+
+
+
+
+.call-popup { background-color: rgba(0, 0, 0, 0.5); }
+.call-popup .popup-buttons { -webkit-flex-direction:column; flex-direction:column; }
+.call-popup .popup-buttons .button { margin:0; margin-bottom:7px; }
+
+
+
+
+.message-team {}
+.message-team .team-list {}
+.message-team .team-list li { float:left; width:31.3333%; margin:0px 1%; display:block; }
+.message-team .team-list li .button { font-size:12px; }

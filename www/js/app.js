@@ -1,24 +1,134 @@
-// Ionic Starter App
+define(
+    [
+        'angularAMD', 
+        'appConfig', 
+        'jquery', 
+        'underscore', 
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+        'ionic-angular',
+        'ng-cordova',
+        'angular-file-upload',
+        
+        'angular-moment',
+        'angular-local-storage'
+    ], 
+    function (angularAMD, appConfig, $, _) {
+        'use strict';
+        
+        var app = angular.module('adqua', [
+            'ngCordova',
+            'ionic', 
+            'ngFileUpload',
+            'LocalStorageModule', 
+            'angularMoment'
+        ]);
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        
 
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
-      cordova.plugins.Keyboard.disableScroll(true);
+        app.constant('AppConfig', {
+            title: '[P&G] MBCI PYC'
+        });
+
+        app.config(appConfig);
+
+        app.run(function($rootScope, $window, $state, amMoment, $ionicPlatform, $ionicLoading, $ionicHistory, $ionicPopup, AppConfig) {
+            amMoment.changeLocale('ko');
+
+            $ionicPlatform.ready(function(){
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+                    cordova.plugins.Keyboard.disableScroll(true);
+                }
+
+                if (window.StatusBar) {
+                    StatusBar.styleDefault();
+                }
+
+                if($window.MobileAccessibility){
+                    $window.MobileAccessibility.usePreferredTextZoom(false);
+                }
+
+                $ionicPlatform.registerBackButtonAction(function(event) {
+                    var historyObj = angular.copy($ionicHistory.viewHistory());
+                    
+                    if( (historyObj.backView == null) || (historyObj.backView.stateId == 'app.main') ){
+                        showExitPopup();
+                    }else{
+                        $ionicHistory.goBack(-1);
+                    }
+                    
+                }, 100);
+            });
+            
+
+            $rootScope.$on('loading::show', showLoading);
+            $rootScope.$on('loading::hide', hideLoading);
+
+
+
+
+
+            var $loading = null,
+                  loadingCounts = 0,
+                  loadingTimer = null;
+
+
+            /*
+            *    ※ 로딩 바 표시 ※
+            */
+            function showLoading(){
+                $ionicLoading.show({
+                    template: '<ion-spinner icon="android"></ion-spinner> <p style="padding-top:10px;">Loading...</p>'
+                });
+/*
+                if( $loading == null )
+                    $loading = $('<div />').addClass('loading').html('<img src="/assets/images/common/ajax-loading.gif" alt="loading" />').appendTo('body');
+
+                loadingCounts++;
+                $loading.show();
+*/
+            }
+
+
+            /*
+            *    ※ 로딩 바 숨기기 ※
+            */
+            function hideLoading(){
+                $ionicLoading.hide();
+/*
+                if( loadingTimer != null )
+                    window.clearTimeout(loadingTimer);
+
+
+                if( --loadingCounts <= 0 ){
+                    loadingCounts = 0;
+
+                    loadingTimer = window.setTimeout(function(){
+                        $loading.hide();
+                    }, 100);
+                }
+*/
+            }
+
+
+            /*
+            *    ※ 앱 종료팝업 표시 ※
+            */
+            function showExitPopup(){
+                $ionicPopup.confirm({
+                    title: AppConfig.title,
+                    template: '앱을 종료하시겠습니까?'
+
+                }).then(function(res) {
+                    if(res) {
+                        navigator.app.exitApp();
+                    }
+                });
+
+            }
+
+        });
+
+        return angularAMD.bootstrap(app);
     }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+);

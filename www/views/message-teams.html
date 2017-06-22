@@ -1,0 +1,16 @@
+<ion-view class="message-team" view-title="소속 팀 선택">
+    <ion-content class="has-header">
+
+        <ul class="team-list">
+            <li ng-repeat="item in teamList">
+                <button class="button button-full" ng-class="{ 'button-stable':(selectedTeam !== item.code), 'button-dark':(selectedTeam == item.code) }" ng-click="setTeam(item.code)">{{item.name }}</button>
+            </li>
+        </ul>
+
+
+        <div class="clear mgt50">
+            <button class="button button-full button-positive">소속선택</button>
+        </div>
+
+    </ion-content>
+</ion-view>
