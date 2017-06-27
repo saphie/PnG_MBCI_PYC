@@ -16,7 +16,7 @@ define(
 
 			function textmore(){
 				$('.list').append('<img src="img/list_messagevisual.png" alt="">');
-				$('.scroll-content').css({ overflow : 'auto' });
+				$('ion-scroll').attr('direction', 'Y');
 			}
 
         };
