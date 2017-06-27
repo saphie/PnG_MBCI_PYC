@@ -23,12 +23,40 @@ define(
                     }
                 }))
                 .state('app.message-teams', angularAMD.route({
-                    url: '/message',
+                    url: '/teams',
                     controllerUrl: 'controller/messageTeamController',
                     views: {
                         'menuContent': {
                             controller: 'MessageTeamController',
                             templateUrl: './views/message-teams.html?ts=' + (new Date()).getTime()
+                        }
+                    }
+                }))
+				.state('app.message-select', angularAMD.route({
+                    url: '/select',
+                    views: {
+                        'menuContent': {
+                            templateUrl: './views/message-select.html?ts=' + (new Date()).getTime()
+                        }
+                    }
+                }))
+				.state('app.message-text', angularAMD.route({
+                    url: '/text',
+                    controllerUrl: 'controller/messageTextController',
+                    views: {
+                        'menuContent': {
+                            controller: 'MessageTextController',
+                            templateUrl: './views/message-text.html?ts=' + (new Date()).getTime()
+                        }
+                    }
+                }))
+				.state('app.message-visual', angularAMD.route({
+                    url: '/visual',
+                    controllerUrl: 'controller/messageVisualController',
+                    views: {
+                        'menuContent': {
+                            controller: 'MessageVisualController',
+                            templateUrl: './views/message-visual.html?ts=' + (new Date()).getTime()
                         }
                     }
                 }))

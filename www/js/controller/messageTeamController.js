@@ -1,9 +1,10 @@
 define(
     [
+		'jquery',
         'angularAMD',
 		'underscore'
     ], 
-    function( angularAMD, _ ){
+    function( $, angularAMD, _ ){
         'use strict';
 
 
@@ -33,6 +34,10 @@ define(
             $scope.setTeam = function( teamCode ){
                 $scope.selectedTeam = teamCode;
             };
+
+			$('.team-list > img').on('click', function(){
+				$(this).attr('src', '/img/img_message_team_on.png');
+			});
 
         };
 

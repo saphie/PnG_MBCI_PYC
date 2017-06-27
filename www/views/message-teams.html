@@ -1,15 +1,17 @@
 <ion-view class="message-team" view-title="소속 팀 선택">
-    <ion-content class="has-header">
-
-        <ul class="team-list">
-            <li ng-repeat="item in teamList">
-                <button class="button button-full" ng-class="{ 'button-stable':(selectedTeam !== item.code), 'button-dark':(selectedTeam == item.code) }" ng-click="setTeam(item.code)">{{item.name }}</button>
-            </li>
+    <ion-content>
+        <h2><img src="/img/h2_message.png" alt="소속을 선택하고 본인 팀에 남겨진 응원을 확인해보세요!" /></h2>
+        <div class="team-list">
+            <img src="/img/img_message_team.png" alt="노르딕 복합 선택" />
+            <ul>
+                <li ng-repeat="item in teamList">
+                    <button class="button button-full" ng-class="{ 'button-stable':(selectedTeam !== item.code), 'button-dark':(selectedTeam == item.code) }" ng-click="setTeam(item.code)">{{item.name }}</button>
+                </li>
+            </ul>
         </ul>
 
-
-        <div class="clear mgt50">
-            <button class="button button-full button-positive">소속선택</button>
+        <div class="buttons">
+            <a ui-sref="app.message-select"><img src="/img/btn_message_apply.png" alt="소속선택" /></a>
         </div>
 
     </ion-content>
