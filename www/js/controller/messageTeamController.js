@@ -36,7 +36,7 @@ define(
             };
 
 			$('.team-list > img').on('click', function(){
-				$(this).attr('src', '../img/img_message_team_on.png');
+				$(this).attr('src', 'img/img_message_team_on.png');
 			});
 
         };
