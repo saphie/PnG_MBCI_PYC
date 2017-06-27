@@ -1,8 +1,8 @@
 <ion-view class="message-text" view-title="Text Message">
-    <ion-content>
+    <ion-content overflow-scroll="true" has-bouncing="true">
         <h2><img src="img/h2_messagetext.png" alt="Text Message 텍스트  필터를 사용해 보내 온  메시지" /></h2>
         <div class="list">
-            <img src="img/list_messagetext.png" alt="" />
+            <img ng-src="{{item.src }}" alt="" ng-repeat="item in dataList" />
         </div>
         <div class="buttons">
             <a href="javascript:;" ng-click="textmore()"><img src="img/btn_more.png" alt="더보기" /></a>

@@ -179,6 +179,3 @@ h1 img { width:100%; }
 .reply-info h2 img { width:89.58333333333333%; }
 .reply-info .buttons { margin-top:6.666666666666667%; text-align:center; }
 .reply-info .buttons img { width:58.33333333333333%; }
-
-
-.pane, .view { overflow:auto; }

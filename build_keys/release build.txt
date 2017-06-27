@@ -1,0 +1,16 @@
+
+ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore app-key.jks android-release-unsigned.apk 1
+ 
+ password1 : adqua0627!
+ password2 : adqua1234
+
+
+ zipalign -v 4 android-release-unsigned.apk AdQUA.apk
+
+
+
+
+
+
+
+/Users/saphie/Library/Android/sdk/build-tools/23.0.3/zipalign -v 4 android-release-unsigned.apk PYC.apk

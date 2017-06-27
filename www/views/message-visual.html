@@ -1,8 +1,8 @@
 <ion-view class="message-visual" view-title="Photo Message">
-    <ion-content>
+    <ion-content overflow-scroll="true" has-bouncing="true">
         <h2><img src="img/h2_messagevisual.png" alt="Photo Message 사진을  포함해 보내 온  메시지" /></h2>
         <div class="list">
-            <img src="img/list_messagevisual.png" alt="" />
+            <img ng-src="{{item.src }}" alt="" ng-repeat="item in dataList" />
         </div>
         <div class="buttons">
             <a href="javascript:;" ng-click="textmore()"><img src="img/btn_more.png" alt="더보기" /></a>
