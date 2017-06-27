@@ -1,9 +1,10 @@
 define(
     [
+		'jquery',
         'angularAMD',
 		'underscore'
     ], 
-    function( angularAMD, _ ){
+    function( $, angularAMD, _ ){
         'use strict';
 
 
@@ -11,6 +12,9 @@ define(
 
 
             $scope.imageSource = null;
+			$scope.snowClick = function(){
+				snowPicture();
+			};
 
 
             $scope.takePicture = openTakePicturePopup;
@@ -26,20 +30,26 @@ define(
                     cssClass: 'call-popup',
                     buttons: [
                         {
-                            text: '<b>앨범에서 선택</b>',
+                            text: '앨범에서 선택',
                             type: 'button-positive',
                             onTap: function(e) {
                                 takePicture(0);
                             }
                         },
                         {
-                            text: '<b>사진 촬영</b>',
+                            text: '사진 촬영',
                             type: 'button-positive',
                             onTap: function(e) {
                                 takePicture(1);
                             }
                         },
-                        { text: '취 소' }
+                        {
+                            text: '스노우촬영',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                                snowPicture();
+                            }
+                        },
                     ]
                 });
             }
@@ -52,32 +62,46 @@ define(
             function takePicture( sourceType ){
                 var defer =  $q.defer();
 
-                var cameraOptions = {
-                    quality: 80,
-                    destinationType: Camera.DestinationType.DATA_URL,
-                    sourceType: sourceType,
-                    allowEdit: true,
-                    encodingType: Camera.EncodingType.JPEG,
-                    targetWidth: 400,
-                    targetHeight: 400,
-                    saveToPhotoAlbum: false
-                };
+				console.log(navigator.camera);
+
+				if ( navigator.camera ) {
+					var cameraOptions = {
+						quality: 80,
+						destinationType: Camera.DestinationType.DATA_URL,
+						sourceType: sourceType,
+						allowEdit: true,
+						encodingType: Camera.EncodingType.JPEG,
+						targetWidth: 400,
+						targetHeight: 400,
+						saveToPhotoAlbum: false
+					};
 
 
-                $cordovaCamera
-                    .getPicture(cameraOptions)
-                    .then(
-                        function(result){
-                            var imageUrl = ('data:image/jpeg;base64,' + result);
+					$cordovaCamera
+						.getPicture(cameraOptions)
+						.then(
+							function(result){
+								var imageUrl = ('data:image/jpeg;base64,' + result);
 
-                            defer.resolve(imageUrl);
-                        }, 
-                        defer.reject
-                    );
+								defer.resolve(imageUrl);
+							}, 
+							defer.reject
+						);
 
-                return defer.promise;
+					return defer.promise;
+				} else {
+					changeImage();
+				}
             }
 
+			function snowPicture(){
+				alert('스노우를 통해 응답해보세요! 더 즐거운 참여가 가능합니다.')
+			}
+
+			function changeImage(){
+				$('.textmessage input, .textmessage textarea').hide();
+				$('.textmessage img').show();
+			}
         };
 
 

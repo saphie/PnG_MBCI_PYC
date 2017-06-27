@@ -69,6 +69,14 @@ define(
                             templateUrl: './views/reply-message.html?ts=' + (new Date()).getTime()
                         }
                     }
+                }))
+				.state('app.reply-info', angularAMD.route({
+                    url: '/info',
+                    views: {
+                        'menuContent': {
+                            templateUrl: './views/reply-info.html?ts=' + (new Date()).getTime()
+                        }
+                    }
                 }));
 
 

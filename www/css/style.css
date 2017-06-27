@@ -141,7 +141,41 @@ h1 img { float:right; margin-right:5.555555555555556%; width:44.02777777777778%;
 .message-select .section2 { margin-top:10.55555555555556%; text-align:right; padding-right:2%;  }
 .message-select .section2 img { width:94.44444444444444%; }
 
+.message-text h2 { padding-top:29%; text-align:center; }
+.message-text h2 img { width:72.63888888888889%; }
+.message-text .list { margin-top:3.888888888888889%; text-align:center; }
+.message-text .list img { width:77.77777777777778%; }
+.message-text .buttons { margin-top:1%; text-align:center; margin-bottom:5%; }
+.message-text .buttons img { margin:0 0.5%; width:43.75%; }
 
+.message-visual h2 { padding-top:29%; text-align:center; }
+.message-visual h2 img { width:78.88888888888889%; }
+.message-visual .list { margin-top:3.888888888888889%; text-align:center; }
+.message-visual .list img { width:77.77777777777778%; }
+.message-visual .buttons { margin-top:1%; text-align:center; margin-bottom:5%; }
+.message-visual .buttons img { margin:0 0.5%; width:43.75%; }
 
+.reply-message ion-content { height:100% !important; }
+.reply-message .scroll { height:100%; }
+.reply-message h2 { padding-top:30.13888888888889%; text-align:center; }
+.reply-message h2 img { width:88.88888888888889%; }
+.reply-message .textmessage { position:relative; margin:0.2777777777777778% auto 0; width:88.88888888888889%; height:27.5%; background:#FFF; text-align:center; padding:2%; }
+.reply-message .textmessage img { width:52.5%; display:none;  }
+.reply-message .textmessage input { margin:1% auto; width:90%; color:#0089d1; font-size:1.2em; }
+.reply-message .textmessage textarea { margin:0 auto; width:90%; height:29.375%; color:#666666; font-size:1em; line-height:1.6; height:70%; }
+.reply-message .buttons { margin-top:3.055555555555556%; text-align:center; }
+.reply-message .buttons .btn1 { margin:0 0.5%; width:33.33333333333333%; }
+.reply-message .buttons .btn2 { margin:0 0.5%; width:54.16666666666667%; }
+.reply-message .snow { position:absolute; bottom:0; left:0; width:100%; z-index:1; }
 
+.popup-container.active .popup { background:url('/img/bg_popup.png') no-repeat; background-size:100% 100%; }
+.popup-container.active .popup .popup-head { border:0; padding:10% 0 2%; }
+.popup-container.active .popup h3 { color:#0089d1; font-weight:bold; font-size:1.3em; }
+.popup-container.active .popup .popup-buttons { padding:5% 8%; }
+.popup-container.active .popup .button.button-positive { font-weight:bold; background-color:#cccccc; }
+.popup-container.active .popup .button.button-positive.activated { background-color:#0089d1; }
 
+.reply-info h2 { padding-top:30.13888888888889%; text-align:center; }
+.reply-info h2 img { width:89.58333333333333%; }
+.reply-info .buttons { margin-top:6.666666666666667%; text-align:center; }
+.reply-info .buttons img { width:58.33333333333333%; }
