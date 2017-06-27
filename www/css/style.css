@@ -118,7 +118,7 @@ ion-nav-bar { display:none; }
 .scroll-content { background:#003480 url('../img/content_bg.jpg') no-repeat 50% 0; background-size:100%; }
 .scroll-content img { width:100%; }
 
-h1 { position:absolute; float:right; z-index:9; text-align:right; top:3.125%; right:5.555555555555556%; width:44.02777777777778%;  }
+h1 { position:absolute; z-index:9; text-align:right; top:3.125%; right:5.555555555555556%; width:44.02777777777778%;  }
 h1 img { width:100%; }
 .main h2 { text-align:center; padding-top:32.5%; }
 .main h2 img { width:88.05555555555556%; }

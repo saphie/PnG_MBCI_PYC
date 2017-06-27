@@ -41,7 +41,7 @@ define(
                 }
 
                 if (window.StatusBar) {
-                    StatusBar.styleDefault();
+                    StatusBar.hide();
                 }
 
                 if($window.MobileAccessibility){
